@@ -66,6 +66,13 @@ pip install -r requirements.txt
 > sudo ufw disable
 > ```
 
+> **Inicialização:** subir a aplicação, via prompt na máquina Cloud, com o comando abaixo:
+> ```bash
+> nohup streamlit run src/app.py > /dev/null &
+> ```
+> O direcionamento de qualquer mensagem para o /dev/null é importante para, após fechar o terminal com a máquina Cloud, a aplicação continuar rodando sem erros por tentativa de "print" porém não ter uma saída padrão disponível na máquina.
+
+
 ## Discussão
 
 **Lições aprendidas:** a parte de redes é o principal desafio ao subir a máquina OCI, pois, mesmo após alguns comandos aplicados, a aplicação só ficava disponível em alguns navegadores. Isso aconteceu devido a problemas de cache no acesso à aplicação, resolvido posteriormente conectando com navegadores distintos (por exemplo, Safari). A conexão HTTP acaba sendo identificada como **NÃO SEGURA** e barrada por algumas redes e navegadores.
